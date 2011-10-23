@@ -13,7 +13,8 @@ sudo /etc/init.d/nfs-kernel-server restart
 The kernel uses the gnu cross toolchain. I place it in /opt. 
 I also create a symlink so buildroot can also use it:
  cd /opt
- wget http://openlinux.amlogic.com/download/linux/ARM/gnutools/arm-2010q1-202-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
+ #wget http://openlinux.amlogic.com/download/linux/ARM/gnutools/arm-2010q1-202-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
+ wget http://www.codesourcery.com/sgpp/lite/arm/portal/package6488/public/arm-none-linux-gnueabi/arm-2010q1-202-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
  tar xf arm-2010q1-202-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
  ls /opt/arm-2010q1
  sudo mkdir -p /opt/CodeSourcery
@@ -34,7 +35,7 @@ Building kernel:
  sudo cp drivers/amlogic/mali/mali.ko /opt/aml-rootfs/lib/modules/
 
 To boot the amlogic board:
- attach usb/serial-ttl to pin white connector (power, tx, gnd, rx)
+ attach usb/serial-ttl to pin white connector (rx (pin 1), gnd (pin 2) tx (pin 3) and pwr (pin 4))
  picocom --baud=115200 /dev/ttyUSB0
  power up and do a few returns to halt the boot.
 
