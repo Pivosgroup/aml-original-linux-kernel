@@ -35,7 +35,7 @@ Building kernel:
  sudo cp drivers/amlogic/mali/mali.ko /opt/aml-rootfs/lib/modules/
 
 To boot the amlogic board:
- attach usb/serial-ttl to pin white connector (rx (pin 1), gnd (pin 2) tx (pin 3) and pwr (pin 4))
+ attach usb/serial-ttl to pin white connector (pwr , tx, gnd, and rx)
  picocom --baud=115200 /dev/ttyUSB0
  power up and do a few returns to halt the boot.
 
